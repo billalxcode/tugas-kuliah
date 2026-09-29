@@ -1,0 +1,19 @@
+\documentclass[12pt, a4paper]{article}
+\input{preamble.tex}
+
+\begin{document}
+\pagenumbering{roman}
+\input{frontmatters/cover.tex}
+
+\clearpage
+\pagenumbering{arabic}
+\input{sections/pendahuluan.tex}
+\input{sections/pembahasan.tex}
+\input{sections/penutup.tex}
+
+\clearpage
+\printbibliography[
+    heading=bibintoc,
+    title={Daftar Pustaka}
+]
+\end{document}
