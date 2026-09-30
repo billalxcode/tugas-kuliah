@@ -25,7 +25,7 @@
 % LANGUAGE
 % ============================================================
 \usepackage{csquotes}
-\usepackage[indonesian-apa]{babel}
+\usepackage[indonesian]{babel}
 
 
 % ============================================================
@@ -106,10 +106,25 @@
 % ============================================================
 % BIBIOLOGY
 % ============================================================
+% NOTE: style=apa tidak punya lokalisasi bahasa Indonesia
+% (tidak ada indonesian-apa.lbx), sehingga \mkbibdateapalongextra
+% undefined -> error \datecircaprint \mkbibdateapalongextra.
+% Pakai authoryear yang aman untuk babel indonesian.
+% Kalau tetap mau APA, ganti ke style=apa + tambahkan:
+%   \DeclareLanguageMapping{indonesian}{american-apa}
 \usepackage[
     backend=biber,
-    style=apa
+    style=authoryear,
+    maxcitenames=2,
+    mincitenames=1,
+    maxbibnames=3,
+    minbibnames=1,
+    uniquelist=false
 ]{biblatex}
+\DefineBibliographyStrings{english}{%
+  andothers = {et al\adddot},
+}
+
 
 \addbibresource{references.bib}
 
